@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin: 20px 0;
+            cursor: pointer;
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            color: #4CAF50;
+            text-decoration: underline;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        table {
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 id="gallery-title">𝓡𝓪𝓫𝓲𝓪 𝓖ö𝓿𝓮𝔃 𝓐𝓻𝓽 𝓖𝓪𝓵𝓵𝓮𝓻𝔂</h2>
+    <table>
+        <tr>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+        </tr>
+        <tr>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+        </tr>
+        <tr>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+            <td><img src="https://source.unsplash.com/random/200x300" alt="random image"></td>
+        </tr>
+    </table>
+
+    <script>
+        function randomImage() {
+            var images = document.getElementsByTagName('img');
+            for (var i = 0; i < images.length; i++) {
+                images[i].src = 'https://source.unsplash.com/random/200x300?random=' + Math.random();
+            }
+        }
+
+
+        const title = document.getElementById("gallery-title");
+
+        function toggleTransform() {
+            title.style.transform = title.style.transform === "scale(1)" ? "scale(1.1)" : "scale(1)";
+            setTimeout(toggleTransform, 1000);
+        }
+
+        toggleTransform();
+
+        randomImage();
+    </script>
+
+</body>
+
+</html>
